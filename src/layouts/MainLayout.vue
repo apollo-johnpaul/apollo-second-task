@@ -7,15 +7,27 @@
           <q-avatar>
             <img src="gcash-logo.png">
           </q-avatar>
-          <strong> Hello!</strong>
+          <strong style="color: blue; font-family: 'Poppins', 'Karla', sans-serif; font-size: 1.2em;">
+            Hello!
+          </strong>
         </q-toolbar-title>
       </q-toolbar>
 
-      <q-tabs align="left" v-model="tab">
-        <q-route-tab to="/pages/page1" label="Wallet" name="wallet" />
-        <q-route-tab to="/pages/page2" label="Borrow" name="borrow" />
-        <q-route-tab to="/pages/page3" label="Grow" name="grow" />
-      </q-tabs>
+    <q-btn-toggle
+      v-model="tab"
+      class="full-width"
+      spread
+      toggle-color="primary"
+      color="white"
+      text-color="primary"
+      unelevated
+      :options="[
+      { label: 'Wallet', value: 'wallet', icon: 'account_balance_wallet' },
+      { label: 'Borrow', value: 'borrow', icon: 'account_balance' },
+      { label: 'Grow', value: 'grow', icon: 'trending_up' }
+      ]"
+      :value="'wallet'"
+    />
     </q-header>
 
     <q-page-container>
