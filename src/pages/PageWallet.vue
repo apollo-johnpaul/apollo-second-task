@@ -2,9 +2,25 @@
   <div class="q-pa-md wallet-carousel-container">
     <div class="row items-center justify-between q-mb-md" style="background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%); border-radius: 16px; padding: 18px 20px;">
       <div>
-        <div class="text-white text-caption">Available Balance</div>
-        <div class="text-h5 text-weight-bold text-white">
-          <q-icon name="currency_php" size="md" class="q-mr-xs" />2,560.39
+        <div class="text-white text-caption">Available Balance
+          <q-btn
+            flat
+            dense
+            round
+            size="sm"
+            :icon="showBalance ? 'visibility' : 'visibility_off'"
+            class="q-ml-xs"
+            @click="showBalance = !showBalance"
+            color="white"
+            style="min-width: 0;"
+          />
+        </div>
+        <div class="text-h5 text-weight-bold text-white row items-center">
+          <span class="row items-center">
+            <span class="q-mr-xs">&#x20B1</span>
+            <span v-if="showBalance">2,560.39</span>
+            <span v-else>*****</span>
+          </span>
         </div>
       </div>
       <q-btn
@@ -114,6 +130,7 @@ import { ref } from 'vue'
 
 const slide = ref('first')
 const tab = ref('home')
+const showBalance = ref(true)
 </script>
 
 <style scoped>
