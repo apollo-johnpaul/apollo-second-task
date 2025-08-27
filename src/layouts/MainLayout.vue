@@ -22,9 +22,9 @@
       text-color="primary"
       unelevated
       :options="[
-      { label: 'Wallet', value: 'wallet', icon: 'account_balance_wallet' },
-      { label: 'Borrow', value: 'borrow', icon: 'account_balance' },
-      { label: 'Grow', value: 'grow', icon: 'trending_up' }
+      { label: 'Wallet', value: 'wallet', icon: 'account_balance_wallet', to: '/page1' },
+      { label: 'Borrow', value: 'borrow', icon: 'account_balance', to: '/pageBarrow' },
+      { label: 'Grow', value: 'grow', icon: 'trending_up', to: '/pageGrow' }
       ]"
       :value="'wallet'"
     />
@@ -34,14 +34,19 @@
       <router-view />
     </q-page-container>
     <q-footer reveal elevated class="bg-grey-8 text-white">
-      <q-toolbar>
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="/public/gcash-logo.png">
-          </q-avatar>
-          <div>G-cash</div>
-        </q-toolbar-title>
-      </q-toolbar>
+
+      <q-tabs
+        v-model="tab"
+        class="text-white"
+        indicator-color="blue"
+      active-color="blue"
+      inactive-color="grey"
+      >
+        <q-tab :ripple="false" name="home" icon="home" label="Home"/>
+        <q-tab :ripple="false" name="inbox" icon="mail" label="Inbox" />
+        <q-tab :ripple="false" name="transactions" icon="receipt_long" label="Transactions" />
+        <q-tab :ripple="false" name="person" icon="account_circle" label="Profile" />
+      </q-tabs>
     </q-footer>
 
   </q-layout>
