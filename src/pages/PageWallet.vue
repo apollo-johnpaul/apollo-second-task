@@ -87,7 +87,20 @@
     >
       <q-tab :ripple="false" name="GInsure" icon="admin_panel_settings" label="GInsure"/>
       <q-tab :ripple="false" name="FoodHub" icon="food_bank" label="Food Hub" />
-      <q-tab :ripple="false" name="Travel" icon="travel_explore" label="Travel" />
+      <div style="position: relative; display: inline-block;">
+        <q-badge
+          align="top right"
+          color="red"
+          text-color="white"
+          style="position: absolute; top: 0; right: 0px; transform: translate(20%,-20%); font-weight: bold; z-index: 1; font-size: 10px; padding: 1px 2px;"
+        >
+          50% OFF
+        </q-badge>
+        <q-tab :ripple="false" name="Travel" icon="travel_explore" label="Travel" />
+      </div>
+      <div style="position: relative; display: inline-block;">
+        <q-tab :ripple="false" name="FoodHub" icon="food_bank" label="Food Hub" />
+      </div>
       <q-tab :ripple="false" name="GForest" icon="forest" label="GForest" />
       <q-tab :ripple="false" name="Gsave" icon="savings" label="Gsave"/>
       <q-tab :ripple="false" name="Deals" icon="handshake" label="Deals" />
