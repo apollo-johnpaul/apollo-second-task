@@ -34,7 +34,31 @@
       <router-view />
     </q-page-container>
 
-    <q-footer reveal elevated class="bg-grey-8 text-white">
+    <q-footer reveal elevated class="bg-primary-8 text-white" style="position: relative;">
+
+      <!-- Floating QR Button: OUTSIDE q-tabs, centered, sticks out -->
+      <div
+        style="
+          position: absolute;
+          left: 50%;
+          top: 0;
+          transform: translate(-50%, -60%);
+          z-index: 10;
+          pointer-events: auto;
+        "
+      >
+        <q-btn
+          round
+          size="lg"
+          color="white"
+          text-color="primary"
+          icon="qr_code"
+          unelevated
+          class="shadow-8"
+          style="box-shadow: 0 4px 24px 0 rgba(33,150,243,0.25);"
+        />
+      </div>
+
       <q-tabs
         v-model="tab"
         class="text-white"
@@ -44,7 +68,7 @@
       >
         <q-tab :ripple="false" name="home" icon="home" label="Home"/>
         <q-tab :ripple="false" name="inbox" icon="mail" label="Inbox" />
-        <q-tab :ripple="false" name="transactions" icon="receipt_long" label="Transactions" />
+        <q-tab :ripple="false" name="transactions" icon="receipt_long" label="Trans" />
         <q-tab :ripple="false" name="person" icon="account_circle" label="Profile" />
       </q-tabs>
     </q-footer>
@@ -63,3 +87,21 @@ function toggleLeftDrawer () {
   leftDrawerOpen.value = !leftDrawerOpen.value
 }
 </script>
+
+<style scoped>
+.qr-gradient-border {
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 50% !important; /* Ensure round border */
+  width: 56px;   /* Match q-btn lg size */
+  height: 56px;  /* Match q-btn lg size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Gradient border */
+  border-image: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
+  border-image-slice: 1;
+  box-sizing: border-box;
+  padding: 0; /* Remove extra space */
+}
+</style>
