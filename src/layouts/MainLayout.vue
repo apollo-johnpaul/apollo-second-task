@@ -7,7 +7,7 @@
           <q-avatar>
             <img src="gcash-logo.png">
           </q-avatar>
-          Title
+          <strong> Hello!</strong>
         </q-toolbar-title>
       </q-toolbar>
 
@@ -21,7 +21,6 @@
     <q-page-container>
       <router-view />
     </q-page-container>
-
     <q-footer reveal elevated class="bg-grey-8 text-white">
       <q-toolbar>
         <q-toolbar-title>
