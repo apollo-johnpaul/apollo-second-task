@@ -5,7 +5,7 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: '/page1', component: () => import('src/pages/PageWallet.vue') },
-      { path: '/pageBarrow', component: () => import('pages/PageBarrow.vue') },
+      { path: '/pageBorrow', component: () => import('src/pages/PageBorrow.vue') },
       { path: '/pageGrow', component: () => import('pages/PageGrow.vue') }
     ]
   },

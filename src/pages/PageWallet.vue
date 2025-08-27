@@ -49,10 +49,21 @@
       dense
       indicator-color="primary"
     >
-      <q-tab :ripple="false" name="home" icon="home" label="Home"/>
-      <q-tab :ripple="false" name="inbox" icon="mail" label="Inbox" />
-      <q-tab :ripple="false" name="transactions" icon="receipt_long" label="Transactions" />
-      <q-tab :ripple="false" name="person" icon="account_circle" label="Profile" />
+      <q-tab :ripple="false" name="home" icon="home" label="GInsure"/>
+      <q-tab :ripple="false" name="inbox" icon="mail" label="Food Hub" />
+      <q-tab :ripple="false" name="transactions" icon="receipt_long" label="Travel" />
+      <q-tab :ripple="false" name="person" icon="account_circle" label="GForest" />
+      <q-tab :ripple="false" name="home" icon="home" label="Gsave"/>
+      <q-tab :ripple="false" name="inbox" icon="mail" label="Deals" />
+      <q-tab :ripple="false" name="transactions" icon="receipt_long" label="GLife" />
+      <q-tab :ripple="false" name="person" icon="account_circle" label="Shop" />
+      <q-tab :ripple="false" name="home" icon="home" label="Ship & Delivery"/>
+      <q-tab :ripple="false" name="inbox" icon="mail" label="Pera Outlet" />
+      <q-tab :ripple="false" name="transactions" icon="receipt_long" label="GCash Jr." />
+      <q-tab :ripple="false" name="person" icon="account_circle" label="Cash Out" />
+      <q-tab :ripple="false" name="inbox" icon="mail" label="GDeals" />
+      <q-tab :ripple="false" name="transactions" icon="receipt_long" label="Earn Money" />
+      <q-tab :ripple="false" name="person" icon="account_circle" label="Borrow" />
     </q-tabs>
 
     <!-- CAROUSEL BELOW -->
