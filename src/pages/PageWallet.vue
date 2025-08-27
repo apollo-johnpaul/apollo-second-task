@@ -34,7 +34,8 @@
       />
     </div>
 
-    <div class="full-width row justify-around q-pa-md">
+    <div class="quick-actions-bg q-pa-md q-mb-md">
+      <div class="full-width row justify-around">
       <div class="column items-center">
         <q-btn flat color="primary" text-color="primary" icon="attach_money" size="xl" />
         <div class="q-mt-xs text-primary text-caption">Money</div>
@@ -51,24 +52,31 @@
         <q-btn flat color="primary" text-color="primary" icon="payments" size="xl" />
         <div class="q-mt-xs text-primary text-caption">Bills</div>
       </div>
-    </div>
-
-    <div class="full-width row justify-around q-pa-md">
-      <div class="column items-center">
-        <q-btn flat color="primary" text-color="primary" icon="local_florist" size="xl" />
-        <div class="q-mt-xs text-primary text-caption">Ginvest</div>
       </div>
-      <div class="column items-center">
-        <q-btn flat color="primary" text-color="primary" icon="credit_card" size="xl" />
-        <div class="q-mt-xs text-primary text-caption">Cards</div>
+      <div class="full-width row justify-around q-mt-md">
+      <div
+        v-for="item in [
+        { icon: 'local_florist', label: 'Ginvest' },
+        { icon: 'credit_card', label: 'Cards' },
+        { icon: 'redeem', label: 'A+ Rewards' },
+        { icon: 'commute', label: 'Commute' }
+        ]"
+        :key="item.label"
+        class="column items-center"
+      >
+        <div class="button-square q-mb-xs flex flex-center">
+        <q-btn
+          flat
+          color="primary"
+          text-color="primary"
+          :icon="item.icon"
+          size="lg"
+          class="full-width full-height"
+          style="min-width:0; min-height:0;"
+        />
+        </div>
+        <div class="q-mt-xs text-primary text-caption">{{ item.label }}</div>
       </div>
-      <div class="column items-center">
-        <q-btn flat color="primary" text-color="primary" icon="redeem" size="xl" />
-        <div class="q-mt-xs text-primary text-caption">A+ Rewards</div>
-      </div>
-      <div class="column items-center">
-        <q-btn flat color="primary" text-color="primary" icon="commute" size="xl" />
-        <div class="q-mt-xs text-primary text-caption">Commute</div>
       </div>
     </div>
 
