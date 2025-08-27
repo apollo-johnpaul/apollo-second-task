@@ -1,8 +1,22 @@
 <template>
   <div class="q-pa-md wallet-carousel-container">
-    <h6 style="background-color:DodgerBlue;">
-      Available Balance <br />P 2,560.39
-    </h6>
+    <div class="row items-center justify-between q-mb-md" style="background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%); border-radius: 16px; padding: 18px 20px;">
+      <div>
+        <div class="text-white text-caption">Available Balance</div>
+        <div class="text-h5 text-weight-bold text-white">
+          <q-icon name="currency_php" size="md" class="q-mr-xs" />2,560.39
+        </div>
+      </div>
+      <q-btn
+        label="+Cash In"
+        color="white"
+        text-color="primary"
+        unelevated
+        class="q-px-md q-py-xs"
+        style="border-radius: 999px; font-weight: 600;"
+        size="md"
+      />
+    </div>
 
     <div class="full-width row justify-around q-pa-md">
       <div class="column items-center">
