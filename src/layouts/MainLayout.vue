@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh lpr fFf">
 
-    <q-header elevated class="bg-primary text-white" height-hint="98">
+    <q-header elevated class="text-white" height-hint="98" style="background: url('gcash-backtoschool.jpg') center center / cover no-repeat;">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
@@ -13,34 +13,34 @@
         </q-toolbar-title>
       </q-toolbar>
 
-    <q-btn-toggle
-      v-model="tab"
-      class="full-width"
-      spread
-      toggle-color="primary"
-      color="white"
-      text-color="primary"
-      unelevated
-      :options="[
-      { label: 'Wallet', value: 'wallet', icon: 'account_balance_wallet', to: '/page1' },
-      { label: 'Borrow', value: 'borrow', icon: 'account_balance', to: '/pageBarrow' },
-      { label: 'Grow', value: 'grow', icon: 'trending_up', to: '/pageGrow' }
-      ]"
-      :value="'wallet'"
-    />
+      <q-btn-toggle
+        v-model="tab"
+        class="full-width"
+        spread
+        toggle-color="primary"
+        color="white"
+        text-color="primary"
+        unelevated
+        :options="[
+        { label: 'Wallet', value: 'wallet', icon: 'account_balance_wallet', to: '/page1' },
+        { label: 'Borrow', value: 'borrow', icon: 'account_balance', to: '/pageBarrow' },
+        { label: 'Grow', value: 'grow', icon: 'trending_up', to: '/pageGrow' }
+        ]"
+        :value="'wallet'"
+      />
     </q-header>
 
     <q-page-container>
       <router-view />
     </q-page-container>
-    <q-footer reveal elevated class="bg-grey-8 text-white">
 
+    <q-footer reveal elevated class="bg-grey-8 text-white">
       <q-tabs
         v-model="tab"
         class="text-white"
         indicator-color="blue"
-      active-color="blue"
-      inactive-color="grey"
+        active-color="blue"
+        inactive-color="grey"
       >
         <q-tab :ripple="false" name="home" icon="home" label="Home"/>
         <q-tab :ripple="false" name="inbox" icon="mail" label="Inbox" />
@@ -56,7 +56,6 @@ import { ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 
 const tab = ref('wallet')
-
 
 const leftDrawerOpen = ref(false)
 
