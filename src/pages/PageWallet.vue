@@ -92,7 +92,7 @@
           align="top right"
           color="red"
           text-color="white"
-          style="position: absolute; top: 0; right: 0px; transform: translate(20%,-20%); font-weight: bold; z-index: 1; font-size: 10px; padding: 1px 2px;"
+          style="position: absolute; top: 0; right: 0px; transform: translate(20%,-20%); font-weight: bold; z-index: 1; font-size: 8px; padding: 1px 2px;"
         >
           50% OFF
         </q-badge>
