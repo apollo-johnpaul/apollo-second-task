@@ -41,9 +41,9 @@
         text-color="primary"
         unelevated
         :options="[
-        { label: 'Wallet', value: 'wallet', icon: 'account_balance_wallet', to: '/page1' },
-        { label: 'Borrow', value: 'borrow', icon: 'account_balance', to: '/pageBorrow' },
-        { label: 'Grow', value: 'grow', icon: 'trending_up', to: '/pageGrow' }
+        { label: 'Wallet', value: 'wallet', icon: 'account_balance_wallet', to: '/PageWallet' },
+        { label: 'Borrow', value: 'borrow', icon: 'account_balance', to: '/PageBorrow' },
+        { label: 'Grow', value: 'grow', icon: 'trending_up', to: '/PageGrow' }
         ]"
         :value="'wallet'"
       />

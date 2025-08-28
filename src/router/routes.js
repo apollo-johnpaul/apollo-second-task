@@ -4,9 +4,9 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
-      { path: '/page1', component: () => import('src/pages/PageWallet.vue') },
-      { path: '/pageBorrow', component: () => import('src/pages/PageBorrow.vue') },
-      { path: '/pageGrow', component: () => import('pages/PageGrow.vue') }
+      { path: '/PageWallet', component: () => import('src/pages/PageWallet.vue') },
+      { path: '/PageBorrow', component: () => import('src/pages/PageBorrow.vue') },
+      { path: '/PageGrow', component: () => import('pages/PageGrow.vue') }
     ]
   },
 
