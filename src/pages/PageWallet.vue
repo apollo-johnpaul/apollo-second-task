@@ -80,9 +80,18 @@
       </div>
     </div>
 
-    <div>
-      <p color="primary">Explore App</p>
+ <div>
+    <div class="row items-center q-gutter-sm text-primary">
+      <span>Explore App</span>
+      <q-btn
+        flat
+        label="View All"
+        icon-right="arrow_circle_right"
+        icon-color="primary"
+        class="no-bg-btn"
+      />
     </div>
+  </div>
 
     <q-tabs
       v-model="tab"
@@ -125,7 +134,7 @@
         arrows
         animated
         v-model="slide"
-        height="400px"
+        height="230"
       >
         <q-carousel-slide name="first" img-src="https://cdn.quasar.dev/img/mountains.jpg">
           <div class="absolute-bottom custom-caption">
