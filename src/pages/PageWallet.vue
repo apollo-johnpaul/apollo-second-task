@@ -135,32 +135,44 @@
     <!-- End Grouped Explore App and Tabs -->
 
     <!-- CAROUSEL BELOW -->
-    <div class="q-pa-md">
+    <div class="q-pa-md carousel-container">
       <q-carousel
-        arrows
+        swipeable
         animated
         v-model="slide"
-        height="150"
+        height="210px"
+        infinite
       >
-        <q-carousel-slide name="first" img-src="https://cdn.quasar.dev/img/mountains.jpg">
-          <div class="absolute-bottom custom-caption">
-            <div class="text-h2">First stop</div>
-            <div class="text-subtitle1">Mountains</div>
-          </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="second" img-src="https://cdn.quasar.dev/img/parallax1.jpg">
-          <div class="absolute-bottom custom-caption">
-            <div class="text-h2">Second stop</div>
-            <div class="text-subtitle1">Famous City</div>
-          </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="third" img-src="https://cdn.quasar.dev/img/parallax2.jpg">
-          <div class="absolute-bottom custom-caption">
-            <div class="text-h2">Third stop</div>
-            <div class="text-subtitle1">Famous Bridge</div>
-          </div>
-        </q-carousel-slide>
+        <q-carousel-slide name="first" img-src="/caraousel/1.jpg" />
+        <q-carousel-slide name="second" img-src="/caraousel/2.jpg" />
+        <q-carousel-slide name="third" img-src="/caraousel/3.jpg" />
+        <q-carousel-slide name="fourth" img-src="/caraousel/4.jpg" />
+        <q-carousel-slide name="fifth" img-src="/caraousel/5.jpg" />
       </q-carousel>
+      <div v-if="slide === 'first'" class="custom-caption-below q-mt-sm">
+        <div class="text-h5">Extend mo converge mo!</div>
+        <div class="text-subtitle">Load na ulit and get Sweldo Assistance  </div>
+      </div>
+      <div v-else-if="slide === 'second'" class="custom-caption-below q-mt-sm">
+        <div class="text-h5">Tap Here to Participate</div>
+        <div class="text-subtitle">Get a chance to meet your fave idol</div>
+      </div>
+      <div v-else-if="slide === 'third'" class="custom-caption-below q-mt-sm">
+        <div class="text-h5">Padala? SendWave na yan!</div>
+        <div class="text-subtitle">Send money home in seconds via SendWave</div>
+      </div>
+      <div v-else-if="slide === 'fourth'" class="custom-caption-below q-mt-sm">
+        <div class="text-h5">Walang abala sa pagpadala!</div>
+        <div class="text-subtitle">Safe and fast padala? Ria na 'yan!'</div>
+      </div>
+      <div v-else-if="slide === 'fifth'" class="custom-caption-below q-mt-sm">
+        <div class="text-h5">Extra kita?</div>
+        <div class="text-subtitle">Posible yan sa Gcrypto!</div>
+      </div>
+      <div v-else-if="slide === 'sixth'" class="custom-caption-below q-mt-sm">
+        <div class="text-h5">Sixth stop</div>
+        <div class="text-subtitle">Avatar</div>
+      </div>
     </div>
   </div>
 </template>
@@ -180,15 +192,30 @@ const showBalance = ref(true)
 }
 
 .quick-actions-group {
-  background: #e0e0e0; /* Darker grey */
+  background: #e0e0e0;
   border-radius: 16px;
 }
 
+.carousel-container {
+  max-width: 390px;
+  margin: 0 auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
 .custom-caption {
-  background: rgba(0,0,0,0.4);
+  background: rgba(62, 44, 195, 0.4);
   color: #fff;
-  padding: 16px;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
+  padding: 8px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+}
+
+.custom-caption-below {
+  background: rgba(62, 44, 195, 0.08);
+  color: #222;
+  padding: 12px 8px 8px 8px;
+  border-radius: 0 0 24px 24px;
+  text-align: center;
 }
 </style>
