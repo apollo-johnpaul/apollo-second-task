@@ -34,99 +34,105 @@
       />
     </div>
 
-    <div class="quick-actions-bg q-pa-md q-mb-md">
+    <!-- Grouped Quick Actions with Grey Background -->
+    <div class="quick-actions-group q-pa-md q-mb-md">
       <div class="full-width row justify-around">
-      <div class="column items-center">
-        <q-btn flat color="primary" text-color="primary" icon="attach_money" size="xl" />
-        <div class="q-mt-xs text-primary text-caption">Send</div>
-      </div>
-      <div class="column items-center">
-        <q-btn flat color="primary" text-color="primary" icon="app_shortcut" size="xl" />
-        <div class="q-mt-xs text-primary text-caption">Load</div>
-      </div>
-      <div class="column items-center">
-        <q-btn flat color="primary" text-color="primary" icon="account_balance" size="xl" />
-        <div class="q-mt-xs text-primary text-caption">Transfer</div>
-      </div>
-      <div class="column items-center">
-        <q-btn flat color="primary" text-color="primary" icon="payments" size="xl" />
-        <div class="q-mt-xs text-primary text-caption">Bills</div>
-      </div>
+        <div class="column items-center">
+          <q-btn flat color="primary" text-color="primary" icon="attach_money" size="xl" />
+          <div class="q-mt-xs text-primary text-caption">Send</div>
+        </div>
+        <div class="column items-center">
+          <q-btn flat color="primary" text-color="primary" icon="app_shortcut" size="xl" />
+          <div class="q-mt-xs text-primary text-caption">Load</div>
+        </div>
+        <div class="column items-center">
+          <q-btn flat color="primary" text-color="primary" icon="account_balance" size="xl" />
+          <div class="q-mt-xs text-primary text-caption">Transfer</div>
+        </div>
+        <div class="column items-center">
+          <q-btn flat color="primary" text-color="primary" icon="payments" size="xl" />
+          <div class="q-mt-xs text-primary text-caption">Bills</div>
+        </div>
       </div>
       <div class="full-width row justify-around q-mt-md">
-      <div
-        v-for="item in [
-        { icon: 'local_florist', label: 'Ginvest' },
-        { icon: 'credit_card', label: 'Cards' },
-        { icon: 'redeem', label: 'A+ Rewards' },
-        { icon: 'commute', label: 'Commute' }
-        ]"
-        :key="item.label"
-        class="column items-center"
-      >
-        <div class="button-square q-mb-xs flex flex-center">
-        <q-btn
-          flat
-          color="primary"
-          text-color="primary"
-          :icon="item.icon"
-          size="lg"
-          class="full-width full-height"
-          style="min-width:0; min-height:0;"
-        />
-        </div>
-        <div class="q-mt-xs text-primary text-caption">{{ item.label }}</div>
-      </div>
-      </div>
-    </div>
-
- <div class="q-pa-sm">
-    <div class="row items-center justify-between text-primary">
-      <span><strong>Explore App</strong></span>
-      <q-btn
-        flat
-        label="View All"
-        icon-right="arrow_circle_right"
-        icon-color="primary"
-        class="no-bg-btn"
-      />
-    </div>
-  </div>
-
-    <q-tabs
-      v-model="tab"
-      class="text-primary"
-      dense
-    >
-      <q-tab :ripple="false" name="GInsure" icon="admin_panel_settings" label="GInsure"/>
-      <q-tab :ripple="false" name="FoodHub" icon="food_bank" label="Food Hub" />
-      <div style="position: relative; display: inline-block;">
-        <q-badge
-          align="top right"
-          color="red"
-          text-color="white"
-          style="position: absolute; top: 0; right: 0px; transform: translate(20%,-20%); font-weight: bold; z-index: 1; font-size: 8px; padding: 1px 2px;"
+        <div
+          v-for="item in [
+            { icon: 'local_florist', label: 'Ginvest' },
+            { icon: 'credit_card', label: 'Cards' },
+            { icon: 'redeem', label: 'A+ Rewards' },
+            { icon: 'commute', label: 'Commute' }
+          ]"
+          :key="item.label"
+          class="column items-center"
         >
-          50% OFF
-        </q-badge>
-        <q-tab :ripple="false" name="Travel" icon="travel_explore" label="Travel" />
+          <div class="button-square q-mb-xs flex flex-center">
+            <q-btn
+              flat
+              color="primary"
+              text-color="primary"
+              :icon="item.icon"
+              size="lg"
+              class="full-width full-height"
+              style="min-width:0; min-height:0;"
+            />
+          </div>
+          <div class="q-mt-xs text-primary text-caption">{{ item.label }}</div>
+        </div>
       </div>
-      <div style="position: relative; display: inline-block;">
+    </div>
+    <!-- End Grouped Quick Actions -->
+
+    <!-- Grouped Explore App and Tabs with Grey Background -->
+    <div class="quick-actions-group q-pa-md q-mb-md">
+      <div class="q-pa-sm">
+        <div class="row items-center justify-between text-primary">
+          <span><strong>Explore App</strong></span>
+          <q-btn
+            flat
+            label="View All"
+            icon-right="arrow_circle_right"
+            icon-color="primary"
+            class="no-bg-btn"
+          />
+        </div>
+      </div>
+
+      <q-tabs
+        v-model="tab"
+        class="text-primary"
+        dense
+      >
+        <q-tab :ripple="false" name="GInsure" icon="admin_panel_settings" label="GInsure"/>
         <q-tab :ripple="false" name="FoodHub" icon="food_bank" label="Food Hub" />
-      </div>
-      <q-tab :ripple="false" name="GForest" icon="forest" label="GForest" />
-      <q-tab :ripple="false" name="Gsave" icon="savings" label="Gsave"/>
-      <q-tab :ripple="false" name="Deals" icon="handshake" label="Deals" />
-      <q-tab :ripple="false" name="GLife" icon="health_and_safety" label="GLife" />
-      <q-tab :ripple="false" name="Shop" icon="shopping_bag" label="Shop" />
-      <q-tab :ripple="false" name="ShipDelivery" icon="local_shipping" label="Ship & Delivery"/>
-      <q-tab :ripple="false" name="PeraOutlet" icon="store" label="Pera Outlet" />
-      <q-tab :ripple="false" name="GCashJr" icon="child_care" label="GCash Jr." />
-      <q-tab :ripple="false" name="CashOut" icon="toll" label="Cash Out" />
-      <q-tab :ripple="false" name="GDeals" icon="local_offer" label="GDeals" />
-      <q-tab :ripple="false" name="EarnMoney" icon="paid" label="Earn Money" />
-      <q-tab :ripple="false" name="Borrow" icon="real_estate_agent" label="Borrow" />
-    </q-tabs>
+        <div style="position: relative; display: inline-block;">
+          <q-badge
+            align="top right"
+            color="red"
+            text-color="white"
+            style="position: absolute; top: 0; right: 0px; transform: translate(20%,-20%); font-weight: bold; z-index: 1; font-size: 8px; padding: 1px 2px;"
+          >
+            50% OFF
+          </q-badge>
+          <q-tab :ripple="false" name="Travel" icon="travel_explore" label="Travel" />
+        </div>
+        <div style="position: relative; display: inline-block;">
+          <q-tab :ripple="false" name="FoodHub" icon="food_bank" label="Food Hub" />
+        </div>
+        <q-tab :ripple="false" name="GForest" icon="forest" label="GForest" />
+        <q-tab :ripple="false" name="Gsave" icon="savings" label="Gsave"/>
+        <q-tab :ripple="false" name="Deals" icon="handshake" label="Deals" />
+        <q-tab :ripple="false" name="GLife" icon="health_and_safety" label="GLife" />
+        <q-tab :ripple="false" name="Shop" icon="shopping_bag" label="Shop" />
+        <q-tab :ripple="false" name="ShipDelivery" icon="local_shipping" label="Ship & Delivery"/>
+        <q-tab :ripple="false" name="PeraOutlet" icon="store" label="Pera Outlet" />
+        <q-tab :ripple="false" name="GCashJr" icon="child_care" label="GCash Jr." />
+        <q-tab :ripple="false" name="CashOut" icon="toll" label="Cash Out" />
+        <q-tab :ripple="false" name="GDeals" icon="local_offer" label="GDeals" />
+        <q-tab :ripple="false" name="EarnMoney" icon="paid" label="Earn Money" />
+        <q-tab :ripple="false" name="Borrow" icon="real_estate_agent" label="Borrow" />
+      </q-tabs>
+    </div>
+    <!-- End Grouped Explore App and Tabs -->
 
     <!-- CAROUSEL BELOW -->
     <div class="q-pa-md">
@@ -134,7 +140,7 @@
         arrows
         animated
         v-model="slide"
-        height="230"
+        height="150"
       >
         <q-carousel-slide name="first" img-src="https://cdn.quasar.dev/img/mountains.jpg">
           <div class="absolute-bottom custom-caption">
@@ -171,6 +177,11 @@ const showBalance = ref(true)
 .wallet-carousel-container {
   max-width: 600px;
   margin: 0 auto;
+}
+
+.quick-actions-group {
+  background: #e0e0e0; /* Darker grey */
+  border-radius: 16px;
 }
 
 .custom-caption {
