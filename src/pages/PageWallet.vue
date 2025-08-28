@@ -80,9 +80,9 @@
       </div>
     </div>
 
- <div>
-    <div class="row items-center q-gutter-sm text-primary">
-      <span>Explore App</span>
+ <div class="q-pa-sm">
+    <div class="row items-center justify-between text-primary">
+      <span><strong>Explore App</strong></span>
       <q-btn
         flat
         label="View All"
