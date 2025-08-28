@@ -11,6 +11,25 @@
             Hello!
           </strong>
         </q-toolbar-title>
+      <q-btn
+        label="Tap for Promos"
+        color="white"
+        text-color="dark"
+        unelevated
+        class="q-px-md q-py-xs q-ml-md q-mr-md"
+        style="border-radius: 999px; font-weight: 600; padding-left: 12px; padding-right: 12px; margin-left: -8px; margin-right: 55px;"
+        size="sm"
+      />
+
+      <q-btn
+        label="HELP"
+        color="secondary"
+        text-color="dark"
+        unelevated
+        class="q-px-md q-py-xs"
+        style="border-radius: 999px; font-weight: 600; padding-left: 6px; padding-right: 6px;"
+        size="xs"
+      />
       </q-toolbar>
 
       <q-btn-toggle

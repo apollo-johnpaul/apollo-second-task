@@ -38,7 +38,7 @@
       <div class="full-width row justify-around">
       <div class="column items-center">
         <q-btn flat color="primary" text-color="primary" icon="attach_money" size="xl" />
-        <div class="q-mt-xs text-primary text-caption">Money</div>
+        <div class="q-mt-xs text-primary text-caption">Send</div>
       </div>
       <div class="column items-center">
         <q-btn flat color="primary" text-color="primary" icon="app_shortcut" size="xl" />
@@ -78,6 +78,10 @@
         <div class="q-mt-xs text-primary text-caption">{{ item.label }}</div>
       </div>
       </div>
+    </div>
+
+    <div>
+      <p color="primary">Explore App</p>
     </div>
 
     <q-tabs
