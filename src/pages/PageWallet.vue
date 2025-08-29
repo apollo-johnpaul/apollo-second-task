@@ -183,13 +183,16 @@
     </div>
   </div>
 
-  <div class="quick-actions-group q-mb-md no-horizontal-padding full-width-bg check-this-out-spacer-2">
+  <div class="quick-actions-group q-mb-md no-horizontal-padding full-width-bg check-this-out-spacer-2" style="padding-bottom: 80px;">
     <div class="check-this-out-label-container">
       <div class="row items-center explore-app-row">
         <span class="explore-app-label">Just For You</span>
       </div>
     </div>
-    <div class="row items-center check-this-out-img-row" style="flex-wrap:nowrap; overflow-x:auto;">
+    <div
+      class="row items-center check-this-out-img-row no-scrollbar"
+      style="flex-wrap:nowrap; overflow-x:auto;"
+    >
       <img src="/slides/slide1.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
       <img src="/slides/slide2.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
       <img src="/slides/slide3.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
@@ -201,7 +204,9 @@
       <img src="/slides/slide9.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
       <img src="/slides/slide10.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
     </div>
-
+    <div class="check-this-out-text-container">
+      <p class="q-mb-none check-this-out-text"></p>
+    </div>
   </div>
   </div>
 </template>
@@ -365,6 +370,5 @@ const showBalance = ref(true)
   }
   .check-this-out-spacer-2 {
     margin-top: 40px !important;
-    /* Add more unique styles for the second section here if needed */
   }
 </style>
