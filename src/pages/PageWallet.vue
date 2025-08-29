@@ -82,14 +82,18 @@
 
     <div class="quick-actions-group q-pa-md q-mb-md">
       <div class="q-pa-sm">
-        <div class="row items-center justify-between text-primary">
-          <span><strong>Explore App</strong></span>
+        <div class="row items-center justify-between explore-app-row">
+          <span class="explore-app-label">
+            <q-icon name="explore" color="primary" size="22px" class="q-mr-xs" />
+            <span>Explore App</span>
+          </span>
           <q-btn
-            flat
+            unelevated
+            color="primary"
+            text-color="white"
             label="View All"
             icon-right="arrow_circle_right"
-            icon-color="primary"
-            class="no-bg-btn"
+            class="explore-viewall-btn"
           />
         </div>
       </div>
@@ -132,42 +136,44 @@
 
 
     <div class="q-pa-md carousel-container">
-      <q-carousel
-        swipeable
-        animated
-        v-model="slide"
-        height="210px"
-        infinite
-      >
-        <q-carousel-slide name="first" img-src="/caraousel/1.jpg" />
-        <q-carousel-slide name="second" img-src="/caraousel/2.jpg" />
-        <q-carousel-slide name="third" img-src="/caraousel/3.jpg" />
-        <q-carousel-slide name="fourth" img-src="/caraousel/4.jpg" />
-        <q-carousel-slide name="fifth" img-src="/caraousel/5.jpg" />
-      </q-carousel>
-      <div v-if="slide === 'first'" class="custom-caption-below q-mt-sm">
-        <div class="text-h5">Extend mo converge mo!</div>
-        <div class="text-subtitle">Load na ulit and get Sweldo Assistance  </div>
-      </div>
-      <div v-else-if="slide === 'second'" class="custom-caption-below q-mt-sm">
-        <div class="text-h5">Tap Here to Participate</div>
-        <div class="text-subtitle">Get a chance to meet your fave idol</div>
-      </div>
-      <div v-else-if="slide === 'third'" class="custom-caption-below q-mt-sm">
-        <div class="text-h5">Padala? SendWave na yan!</div>
-        <div class="text-subtitle">Send money home in seconds via SendWave</div>
-      </div>
-      <div v-else-if="slide === 'fourth'" class="custom-caption-below q-mt-sm">
-        <div class="text-h5">Walang abala sa pagpadala!</div>
-        <div class="text-subtitle">Safe and fast padala? Ria na 'yan!'</div>
-      </div>
-      <div v-else-if="slide === 'fifth'" class="custom-caption-below q-mt-sm">
-        <div class="text-h5">Extra kita?</div>
-        <div class="text-subtitle">Posible yan sa Gcrypto!</div>
-      </div>
-      <div v-else-if="slide === 'sixth'" class="custom-caption-below q-mt-sm">
-        <div class="text-h5">Sixth stop</div>
-        <div class="text-subtitle">Avatar</div>
+      <div class="carousel-wrapper">
+        <q-carousel
+          swipeable
+          animated
+          v-model="slide"
+          height="210px"
+          infinite
+        >
+          <q-carousel-slide name="first" img-src="/caraousel/1.jpg" />
+          <q-carousel-slide name="second" img-src="/caraousel/2.jpg" />
+          <q-carousel-slide name="third" img-src="/caraousel/3.jpg" />
+          <q-carousel-slide name="fourth" img-src="/caraousel/4.jpg" />
+          <q-carousel-slide name="fifth" img-src="/caraousel/5.jpg" />
+        </q-carousel>
+        <div v-if="slide === 'first'" class="carousel-caption-attach">
+          <div class="caption-head">Extend mo converge mo!</div>
+          <div class="caption-sub">Load na ulit and get Sweldo Assistance</div>
+        </div>
+        <div v-else-if="slide === 'second'" class="carousel-caption-attach">
+          <div class="caption-head">Tap Here to Participate</div>
+          <div class="caption-sub">Get a chance to meet your fave idol</div>
+        </div>
+        <div v-else-if="slide === 'third'" class="carousel-caption-attach">
+          <div class="caption-head">Padala? SendWave na yan!</div>
+          <div class="caption-sub">Send money home in seconds via SendWave</div>
+        </div>
+        <div v-else-if="slide === 'fourth'" class="carousel-caption-attach">
+          <div class="caption-head">Walang abala sa pagpadala!</div>
+          <div class="caption-sub">Safe and fast padala? Ria na 'yan!'</div>
+        </div>
+        <div v-else-if="slide === 'fifth'" class="carousel-caption-attach">
+          <div class="caption-head">Extra kita?</div>
+          <div class="caption-sub">Posible yan sa Gcrypto!</div>
+        </div>
+        <div v-else-if="slide === 'sixth'" class="carousel-caption-attach">
+          <div class="caption-head">Sixth stop</div>
+          <div class="caption-sub">Avatar</div>
+        </div>
       </div>
     </div>
   </div>
@@ -192,11 +198,15 @@ const showBalance = ref(true)
   border-radius: 16px;
 }
 
+
 .carousel-container {
   max-width: 390px;
   margin: 0 auto;
   padding-top: 8px;
   padding-bottom: 8px;
+}
+.carousel-wrapper {
+
 }
 
 .custom-caption {
@@ -207,11 +217,52 @@ const showBalance = ref(true)
   border-bottom-right-radius: 32px;
 }
 
-.custom-caption-below {
-  background: rgba(62, 44, 195, 0.08);
-  color: #222;
-  padding: 12px 8px 8px 8px;
+
+.carousel-caption-attach {
+  width: 100%;
+  background: linear-gradient(0deg, rgba(33,150,243,0.92) 80%, rgba(33,150,243,0.45) 100%);
+  color: #fff;
   border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 24px 0 rgba(33, 150, 243, 0.13);
+  padding: 16px 18px 10px 18px;
   text-align: center;
+  margin-top: 0.5rem;
+  backdrop-filter: blur(2px);
+}
+.carousel-caption-attach .caption-head {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+}
+.carousel-caption-attach .caption-sub {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.95;
+}
+/* Explore App label and View All button improvements */
+.explore-app-row {
+  align-items: center;
+}
+.explore-app-label {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #1976d2;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.2px;
+  background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.explore-viewall-btn {
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 0 18px;
+  transition: box-shadow 0.2s;
+}
+.explore-viewall-btn:hover {
+  box-shadow: 0 2px 12px 0 rgba(33, 150, 243, 0.18);
 }
 </style>
