@@ -34,7 +34,6 @@
       />
     </div>
 
-    <!-- Grouped Quick Actions with Grey Background -->
     <div class="quick-actions-group q-pa-md q-mb-md">
       <div class="full-width row justify-around">
         <div class="column items-center">
@@ -80,9 +79,7 @@
         </div>
       </div>
     </div>
-    <!-- End Grouped Quick Actions -->
 
-    <!-- Grouped Explore App and Tabs with Grey Background -->
     <div class="quick-actions-group q-pa-md q-mb-md">
       <div class="q-pa-sm">
         <div class="row items-center justify-between text-primary">
@@ -132,9 +129,8 @@
         <q-tab :ripple="false" name="Borrow" icon="real_estate_agent" label="Borrow" />
       </q-tabs>
     </div>
-    <!-- End Grouped Explore App and Tabs -->
 
-    <!-- CAROUSEL BELOW -->
+
     <div class="q-pa-md carousel-container">
       <q-carousel
         swipeable

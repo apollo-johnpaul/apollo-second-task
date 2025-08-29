@@ -55,7 +55,6 @@
 
     <q-footer reveal elevated class="bg-primary-8 text-white" style="position: relative;">
 
-      <!-- Floating QR Button: OUTSIDE q-tabs, centered, sticks out -->
       <div
         style="
           position: absolute;
@@ -111,16 +110,16 @@ function toggleLeftDrawer () {
 .qr-gradient-border {
   border-width: 3px;
   border-style: solid;
-  border-radius: 50% !important; /* Ensure round border */
-  width: 56px;   /* Match q-btn lg size */
-  height: 56px;  /* Match q-btn lg size */
+  border-radius: 50% !important;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Gradient border */
+
   border-image: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
   border-image-slice: 1;
   box-sizing: border-box;
-  padding: 0; /* Remove extra space */
+  padding: 0;
 }
 </style>
