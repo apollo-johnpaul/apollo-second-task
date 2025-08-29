@@ -205,8 +205,8 @@ const showBalance = ref(true)
 
 .custom-caption {
   background: rgba(62, 44, 195, 0.4);
-  color: #fff;
-  padding: 8px;
+  color: #ed0c0c;
+  padding: 4px;
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
 }
