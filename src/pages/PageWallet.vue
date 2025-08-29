@@ -82,17 +82,14 @@
     <div class="quick-actions-group q-pa-md q-mb-md">
       <div class="q-pa-sm">
         <div class="row items-center justify-between explore-app-row">
-          <span class="explore-app-label">
-            <q-icon name="explore" color="primary" size="22px" class="q-mr-xs" />
-            <span>Explore App</span>
-          </span>
+          <span class="explore-app-label">Explore App</span>
           <q-btn
-            unelevated
+            flat
             color="primary"
-            text-color="white"
+            text-color="primary"
             label="View All"
             icon-right="arrow_circle_right"
-            class="explore-viewall-btn"
+            class="explore-viewall-btn no-bg-btn"
           />
         </div>
       </div>
@@ -235,23 +232,21 @@ const showBalance = ref(true)
 .explore-app-label {
   font-size: 1.18rem;
   font-weight: 700;
-  color: #1976d2;
+  color: #17407b;
   display: flex;
   align-items: center;
   letter-spacing: 0.2px;
-  background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  margin-left: -8px;
 }
 .explore-viewall-btn {
-  border-radius: 999px;
   font-weight: 600;
-  padding: 0 18px;
-  transition: box-shadow 0.2s;
+  padding: 0 8px;
+  min-width: 0;
 }
-.explore-viewall-btn:hover {
-  box-shadow: 0 2px 12px 0 rgba(33, 150, 243, 0.18);
+.no-bg-btn {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .wallet-balance-header {
