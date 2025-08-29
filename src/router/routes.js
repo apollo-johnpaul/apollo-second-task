@@ -3,7 +3,7 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') },
+  { path: '', component: () => import('src/pages/PageWallet.vue') },
       { path: '/PageWallet', component: () => import('src/pages/PageWallet.vue') },
       { path: '/PageBorrow', component: () => import('src/pages/PageBorrow.vue') },
       { path: '/PageGrow', component: () => import('pages/PageGrow.vue') }
