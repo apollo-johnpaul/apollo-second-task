@@ -189,8 +189,17 @@
         <span class="explore-app-label">Just For You</span>
       </div>
     </div>
-    <div class="row items-center check-this-out-img-row">
-      <img src="gforest.jpg" class="check-this-out-img" />
+    <div class="row items-center check-this-out-img-row" style="flex-wrap:nowrap; overflow-x:auto;">
+      <img src="/slides/slide1.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+      <img src="/slides/slide2.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+      <img src="/slides/slide3.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+      <img src="/slides/slide4.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+      <img src="/slides/slide5.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+      <img src="/slides/slide6.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+      <img src="/slides/slide7.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+      <img src="/slides/slide8.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+      <img src="/slides/slide9.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+      <img src="/slides/slide10.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
     </div>
 
   </div>
