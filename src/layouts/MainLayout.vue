@@ -49,12 +49,11 @@
       />
     </q-header>
 
-    <q-page-container>
+  <q-page-container>
       <router-view />
     </q-page-container>
 
-    <q-footer reveal elevated class="bg-primary-8 text-white" style="position: relative;">
-
+  <q-footer v-show="true" :class="['bg-primary-8', 'text-white', 'fixed-footer', { 'footer-hidden': !showFooter }]" reveal elevated>
       <div
         style="
           position: absolute;
@@ -94,19 +93,54 @@
   </q-layout>
 </template>
 <script setup>
-import { ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+
+
 
 const tab = ref('wallet')
-
 const leftDrawerOpen = ref(false)
+const showFooter = ref(true)
+let lastScrollTop = 0
 
 function toggleLeftDrawer () {
   leftDrawerOpen.value = !leftDrawerOpen.value
 }
+
+
+function handleScroll() {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0
+  if (scrollTop < 10) {
+    showFooter.value = true
+  } else if (scrollTop > lastScrollTop) {
+    showFooter.value = false
+  } else if (scrollTop < lastScrollTop) {
+    showFooter.value = true
+  }
+  lastScrollTop = scrollTop
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <style scoped>
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1), opacity 0.3s cubic-bezier(.4,0,.2,1);
+}
+.footer-hidden {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
 .qr-gradient-border {
   border-width: 3px;
   border-style: solid;
