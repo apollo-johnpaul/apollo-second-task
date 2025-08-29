@@ -1,6 +1,6 @@
 <template>
-  <div class="q-pa-md wallet-carousel-container">
-  <div class="row items-center justify-between q-mb-md wallet-balance-header">
+  <div class="wallet-carousel-container" style="padding:0; margin:0; max-width:100vw; width:100vw;">
+  <div class="row items-center justify-between q-mb-md wallet-balance-header" style="margin:0;">
       <div>
         <div class="text-white text-caption wallet-balance-label">Available Balance
           <q-btn
@@ -103,7 +103,6 @@
         <q-tab :ripple="false" name="FoodHub" icon="food_bank" label="Food Hub" />
         <div class="tab-badge-wrapper">
           <q-badge
-            align="top right"
             color="red"
             text-color="white"
             class="tab-badge-helper"
@@ -170,7 +169,19 @@
       </div>
     </div>
 
-
+  <div class="quick-actions-group q-mb-md no-horizontal-padding full-width-bg">
+    <div class="check-this-out-label-container">
+      <div class="row items-center explore-app-row">
+        <span class="explore-app-label">Check This Out</span>
+      </div>
+    </div>
+    <div class="row items-center check-this-out-img-row">
+      <img src="gforest.jpg" class="check-this-out-img" />
+    </div>
+    <div class="check-this-out-text-container">
+      <p class="q-mb-none check-this-out-text">Join the movement <br /> with GForest!</p>
+    </div>
+      </div>
   </div>
 </template>
 
@@ -288,5 +299,44 @@ const showBalance = ref(true)
 .inline-rel-block {
   position: relative;
   display: inline-block;
+}
+
+.no-horizontal-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  border-radius: 0 !important;
+}
+.full-width-bg {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  border-radius: 0 !important;
+}
+.check-this-out-label-container {
+  padding: 8px 0 8px 0;
+  margin: 0;
+  margin-left: 16px;
+}
+.check-this-out-img-row {
+  padding: 0;
+  margin: 0;
+}
+.check-this-out-img {
+  max-width: 140px;
+  border-radius: 20px;
+  margin-left: 16px;
+}
+.check-this-out-text-container {
+  padding: 16px 0 0 0;
+  margin-left: 16px;
+}
+.check-this-out-text {
+  font-weight: 600;
+  color: black;
 }
 </style>
