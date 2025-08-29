@@ -181,7 +181,19 @@
     <div class="check-this-out-text-container">
       <p class="q-mb-none check-this-out-text">Join the movement <br /> with GForest!</p>
     </div>
+  </div>
+
+  <div class="quick-actions-group q-mb-md no-horizontal-padding full-width-bg check-this-out-spacer-2">
+    <div class="check-this-out-label-container">
+      <div class="row items-center explore-app-row">
+        <span class="explore-app-label">Just For You</span>
       </div>
+    </div>
+    <div class="row items-center check-this-out-img-row">
+      <img src="gforest.jpg" class="check-this-out-img" />
+    </div>
+
+  </div>
   </div>
 </template>
 
@@ -339,4 +351,11 @@ const showBalance = ref(true)
   font-weight: 600;
   color: black;
 }
+  .check-this-out-spacer {
+    margin-top: 14px !important;
+  }
+  .check-this-out-spacer-2 {
+    margin-top: 40px !important;
+    /* Add more unique styles for the second section here if needed */
+  }
 </style>
