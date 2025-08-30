@@ -1,13 +1,338 @@
+
 <template>
-  <div class="q-pa-md">
-    <q-card>
-      <q-card-section>
-        Welcome to Borrow Page!
-      </q-card-section>
-    </q-card>
+  <div class="wallet-carousel-container" style="padding:0; margin:0; max-width:100vw; width:100vw;">
+    <div class="row items-center justify-between q-mb-md wallet-balance-header" style="margin:0;">
+      <div>
+
+        <div class="text-h5 wallet-balance-amount text-white row items-center">
+          <span class="row items-center">
+            <span >Gipit? Borrow muna!</span>
+          </span>
+        </div>
+      </div>
+      <q-btn
+        label="Learn More"
+        color="white"
+        text-color="primary"
+        unelevated
+        class="wallet-cashin-btn"
+        size="sm"
+      />
+    </div>
+
+    <div class="quick-actions-group q-pa-md q-mb-md">
+      <div class="full-width row justify-around">
+        <div class="column items-center">
+          <q-btn flat color="primary" text-color="primary" icon="app_shortcut" size="xl" />
+          <div class="q-mt-xs text-primary text-caption">Load</div>
+        </div>
+        <div class="column items-center">
+          <q-btn flat color="primary" text-color="primary" icon="account_balance" size="xl" />
+          <div class="q-mt-xs text-primary text-caption">Transfer</div>
+        </div>
+        <div class="column items-center">
+          <q-btn flat color="primary" text-color="primary" icon="payments" size="xl" />
+          <div class="q-mt-xs text-primary text-caption">Bills</div>
+        </div>
+        <div class="column items-center">
+          <q-btn flat color="primary" text-color="primary" icon="commute" size="xl" />
+          <div class="q-mt-xs text-primary text-caption">Commute</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-pa-md q-mb-md flex flex-center">
+      <img src="/public/gcash-backtoschool.jpg" alt="Banner" style="max-width: 160px; border-radius: 12px; box-shadow: 0 2px 8px #0002;" />
+    </div>
+    <div class="quick-actions-group q-pa-md q-mb-md">
+      <div class="q-pa-sm">
+        <div class="row items-center justify-between explore-app-row">
+          <span class="explore-app-label">Explore App</span>
+          <q-btn
+            flat
+            color="primary"
+            text-color="primary"
+            label="View All"
+            icon-right="arrow_circle_right"
+            class="explore-viewall-btn no-bg-btn"
+          />
+        </div>
+      </div>
+      <q-tabs
+        v-model="tab"
+        class="text-primary"
+        dense
+      >
+        <q-tab :ripple="false" name="GInsure" icon="admin_panel_settings" label="GInsure"/>
+        <q-tab :ripple="false" name="FoodHub" icon="food_bank" label="Food Hub" />
+        <div class="tab-badge-wrapper">
+          <q-badge
+            color="red"
+            text-color="white"
+            class="tab-badge-helper"
+          >
+            50% OFF
+          </q-badge>
+          <q-tab :ripple="false" name="Travel" icon="travel_explore" label="Travel" />
+        </div>
+        <div class="inline-rel-block">
+          <q-tab :ripple="false" name="FoodHub" icon="food_bank" label="Food Hub" />
+        </div>
+        <q-tab :ripple="false" name="GForest" icon="forest" label="GForest" />
+        <q-tab :ripple="false" name="Gsave" icon="savings" label="Gsave"/>
+        <q-tab :ripple="false" name="Deals" icon="handshake" label="Deals" />
+        <q-tab :ripple="false" name="GLife" icon="health_and_safety" label="GLife" />
+        <q-tab :ripple="false" name="Shop" icon="shopping_bag" label="Shop" />
+        <q-tab :ripple="false" name="ShipDelivery" icon="local_shipping" label="Ship & Delivery"/>
+        <q-tab :ripple="false" name="PeraOutlet" icon="store" label="Pera Outlet" />
+        <q-tab :ripple="false" name="GCashJr" icon="child_care" label="GCash Jr." />
+        <q-tab :ripple="false" name="CashOut" icon="toll" label="Cash Out" />
+        <q-tab :ripple="false" name="GDeals" icon="local_offer" label="GDeals" />
+        <q-tab :ripple="false" name="EarnMoney" icon="paid" label="Earn Money" />
+        <q-tab :ripple="false" name="Borrow" icon="real_estate_agent" label="Borrow" />
+      </q-tabs>
+      <div class="q-pa-none carousel-container">
+        <div class="carousel-wrapper">
+          <q-carousel
+            swipeable
+            animated
+            v-model="slide"
+            height="210px"
+            infinite
+          >
+            <q-carousel-slide name="first" img-src="/caraousel/1.jpg" />
+            <q-carousel-slide name="second" img-src="/caraousel/2.jpg" />
+            <q-carousel-slide name="third" img-src="/caraousel/3.jpg" />
+            <q-carousel-slide name="fourth" img-src="/caraousel/4.jpg" />
+            <q-carousel-slide name="fifth" img-src="/caraousel/5.jpg" />
+          </q-carousel>
+          <div class="carousel-caption-attach">
+            <div class="caption-head caption-head-blue">
+              {{
+                slide === 'first' ? 'Extend mo converge mo!' :
+                slide === 'second' ? 'Tap Here to Participate' :
+                slide === 'third' ? 'Padala? SendWave na yan!' :
+                slide === 'fourth' ? 'Walang abala sa pagpadala!' :
+                slide === 'fifth' ? 'Extra kita?' :
+                slide === 'sixth' ? 'Sixth stop' : ''
+              }}
+            </div>
+            <div class="caption-sub caption-sub-grey">
+              {{
+                slide === 'first' ? 'Load na ulit and get Sweldo Assistance' :
+                slide === 'second' ? 'Get a chance to meet your fave idol' :
+                slide === 'third' ? 'Send money home in seconds via SendWave' :
+                slide === 'fourth' ? 'Safe and fast padala? Ria na \'yan!' :
+                slide === 'fifth' ? 'Posible yan sa Gcrypto!' :
+                slide === 'sixth' ? 'Avatar' : ''
+              }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quick-actions-group q-mb-md no-horizontal-padding full-width-bg">
+      <div class="check-this-out-label-container">
+        <div class="row items-center explore-app-row">
+          <span class="explore-app-label">Check This Out</span>
+        </div>
+      </div>
+      <div class="row items-center check-this-out-img-row">
+        <img src="gforest.jpg" class="check-this-out-img" />
+      </div>
+      <div class="check-this-out-text-container">
+        <p class="q-mb-none check-this-out-text">Join the movement <br /> with GForest!</p>
+      </div>
+    </div>
+
+    <div class="quick-actions-group q-mb-md no-horizontal-padding full-width-bg check-this-out-spacer-2" style="padding-bottom: 80px;">
+      <div class="check-this-out-label-container">
+        <div class="row items-center explore-app-row">
+          <span class="explore-app-label">Just For You</span>
+        </div>
+      </div>
+      <div
+        class="row items-center check-this-out-img-row no-scrollbar"
+        style="flex-wrap:nowrap; overflow-x:auto;"
+      >
+        <img src="/slides/slide1.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+        <img src="/slides/slide2.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+        <img src="/slides/slide3.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+        <img src="/slides/slide4.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+        <img src="/slides/slide5.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+        <img src="/slides/slide6.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+        <img src="/slides/slide7.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+        <img src="/slides/slide8.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+        <img src="/slides/slide9.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+        <img src="/slides/slide10.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+      </div>
+      <div class="check-this-out-text-container">
+        <p class="q-mb-none check-this-out-text"></p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-//
+import { ref } from 'vue'
+
+const slide = ref('first')
+const tab = ref('home')
+const showBalance = ref(true)
+
 </script>
+
+<style scoped>
+.wallet-carousel-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.quick-actions-group {
+  background: #e0e0e0;
+  border-radius: 16px;
+}
+
+
+.carousel-container {
+  max-width: 390px;
+  margin: 0 auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.carousel-wrapper {
+
+}
+
+.carousel-caption-attach {
+  width: 100%;
+  color: #222;
+  border-radius: 0 0 24px 24px;
+  padding: 12px 18px 8px 18px;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+.carousel-caption-attach .caption-head, .caption-head {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+  color: #1976d2 !important;
+}
+.carousel-caption-attach .caption-sub, .caption-sub {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.95;
+  color: #888 !important;
+}
+
+.explore-app-row {
+  align-items: center;
+}
+.explore-app-label {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #17407b;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.2px;
+  margin-left: -8px;
+}
+.explore-viewall-btn {
+  font-weight: 600;
+  padding: 0 8px;
+  min-width: 0;
+}
+.no-bg-btn {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.wallet-balance-header {
+  background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
+  border-radius: 16px;
+  padding: 18px 20px;
+}
+.wallet-balance-amount {
+  font-weight: 700;
+}
+.wallet-cashin-btn {
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 0 18px;
+}
+
+.btn-square-helper {
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+
+.tab-badge-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.tab-badge-helper {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  transform: translate(20%,-20%);
+  font-weight: bold;
+  z-index: 1;
+  font-size: 8px;
+  padding: 1px 2px;
+}
+.min-width-0 {
+  min-width: 0 !important;
+}
+.inline-rel-block {
+  position: relative;
+  display: inline-block;
+}
+
+.no-horizontal-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  border-radius: 0 !important;
+}
+.full-width-bg {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  border-radius: 0 !important;
+}
+.check-this-out-label-container {
+  padding: 8px 0 8px 0;
+  margin: 0;
+  margin-left: 16px;
+}
+.check-this-out-img-row {
+  padding: 0;
+  margin: 0;
+}
+.check-this-out-img {
+  max-width: 140px;
+  border-radius: 20px;
+  margin-left: 16px;
+}
+.check-this-out-text-container {
+  padding: 16px 0 0 0;
+  margin-left: 16px;
+}
+.check-this-out-text {
+  font-weight: 600;
+  color: black;
+}
+  .check-this-out-spacer {
+    margin-top: 14px !important;
+  }
+  .check-this-out-spacer-2 {
+    margin-top: 40px !important;
+  }
+</style>

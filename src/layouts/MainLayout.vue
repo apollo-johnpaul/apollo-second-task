@@ -94,37 +94,16 @@
 </template>
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-
-
-
 const tab = ref('wallet')
-const leftDrawerOpen = ref(false)
 const showFooter = ref(true)
-let lastScrollTop = 0
-
-function toggleLeftDrawer () {
-  leftDrawerOpen.value = !leftDrawerOpen.value
+let lastScroll = 0
+const handleScroll = () => {
+  const y = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0
+  showFooter.value = y < 10 || y < lastScroll
+  lastScroll = y
 }
-
-
-function handleScroll() {
-  const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0
-  if (scrollTop < 10) {
-    showFooter.value = true
-  } else if (scrollTop > lastScrollTop) {
-    showFooter.value = false
-  } else if (scrollTop < lastScrollTop) {
-    showFooter.value = true
-  }
-  lastScrollTop = scrollTop
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
+onMounted(() => window.addEventListener('scroll', handleScroll))
+onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 </script>
 
 <style scoped>
