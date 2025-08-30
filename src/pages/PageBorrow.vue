@@ -15,7 +15,7 @@
 
     <QuickActions :actions="quickActions" @action="onQuickAction" />
 
-  <BannerImage src="/gcash-backtoschool.jpg" alt="Banner" imgStyle="max-width: 160px; border-radius: 12px; box-shadow: 0 2px 8px #0002;" />
+    <BannerImage src="/banner/banner-borrow.jpg" alt="Banner" imgStyle="max-width: 400px; border-radius: 12px; box-shadow: 0 2px 8px #0002; margin-top: -20px; margin-bottom: -20px;" />
 
     <SectionWithViewAll label="Explore App" @view-all="onViewAll">
       <q-tabs
@@ -93,10 +93,10 @@ const slide = ref('first')
 const tab = ref('home')
 
 const quickActions = [
-  { icon: 'app_shortcut', label: 'Load' },
-  { icon: 'account_balance', label: 'Transfer' },
-  { icon: 'payments', label: 'Bills' },
-  { icon: 'commute', label: 'Commute' }
+  { icon: 'real_estate_agent', label: 'GLoan' },
+  { icon: 'calendar_month', label: 'GGives' },
+  { icon: 'phonelink_off', label: 'Borrow Load' },
+  { icon: 'credit_score', label: 'GCredit' }
 ]
 
 const carouselSlides = [
