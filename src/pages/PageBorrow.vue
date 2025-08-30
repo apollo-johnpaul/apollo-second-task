@@ -1,63 +1,23 @@
 
+
 <template>
   <div class="wallet-carousel-container" style="padding:0; margin:0; max-width:100vw; width:100vw;">
-    <div class="row items-center justify-between q-mb-md wallet-balance-header" style="margin:0;">
-      <div>
+    <WalletHeader
+      :label="''"
+      :showLabel="false"
+      :showToggle="false"
+      :showBalance="true"
+      balance="Gipit? Borrow muna!"
+      actionLabel="Learn More"
+      actionSize="sm"
+      @action="onLearnMore"
+    />
 
-        <div class="text-h5 wallet-balance-amount text-white row items-center">
-          <span class="row items-center">
-            <span >Gipit? Borrow muna!</span>
-          </span>
-        </div>
-      </div>
-      <q-btn
-        label="Learn More"
-        color="white"
-        text-color="primary"
-        unelevated
-        class="wallet-cashin-btn"
-        size="sm"
-      />
-    </div>
+    <QuickActions :actions="quickActions" @action="onQuickAction" />
 
-    <div class="quick-actions-group q-pa-md q-mb-md">
-      <div class="full-width row justify-around">
-        <div class="column items-center">
-          <q-btn flat color="primary" text-color="primary" icon="app_shortcut" size="xl" />
-          <div class="q-mt-xs text-primary text-caption">Load</div>
-        </div>
-        <div class="column items-center">
-          <q-btn flat color="primary" text-color="primary" icon="account_balance" size="xl" />
-          <div class="q-mt-xs text-primary text-caption">Transfer</div>
-        </div>
-        <div class="column items-center">
-          <q-btn flat color="primary" text-color="primary" icon="payments" size="xl" />
-          <div class="q-mt-xs text-primary text-caption">Bills</div>
-        </div>
-        <div class="column items-center">
-          <q-btn flat color="primary" text-color="primary" icon="commute" size="xl" />
-          <div class="q-mt-xs text-primary text-caption">Commute</div>
-        </div>
-      </div>
-    </div>
+  <BannerImage src="/gcash-backtoschool.jpg" alt="Banner" imgStyle="max-width: 160px; border-radius: 12px; box-shadow: 0 2px 8px #0002;" />
 
-    <div class="q-pa-md q-mb-md flex flex-center">
-      <img src="/public/gcash-backtoschool.jpg" alt="Banner" style="max-width: 160px; border-radius: 12px; box-shadow: 0 2px 8px #0002;" />
-    </div>
-    <div class="quick-actions-group q-pa-md q-mb-md">
-      <div class="q-pa-sm">
-        <div class="row items-center justify-between explore-app-row">
-          <span class="explore-app-label">Explore App</span>
-          <q-btn
-            flat
-            color="primary"
-            text-color="primary"
-            label="View All"
-            icon-right="arrow_circle_right"
-            class="explore-viewall-btn no-bg-btn"
-          />
-        </div>
-      </div>
+    <SectionWithViewAll label="Explore App" @view-all="onViewAll">
       <q-tabs
         v-model="tab"
         class="text-primary"
@@ -91,96 +51,86 @@
         <q-tab :ripple="false" name="EarnMoney" icon="paid" label="Earn Money" />
         <q-tab :ripple="false" name="Borrow" icon="real_estate_agent" label="Borrow" />
       </q-tabs>
-      <div class="q-pa-none carousel-container">
-        <div class="carousel-wrapper">
-          <q-carousel
-            swipeable
-            animated
-            v-model="slide"
-            height="210px"
-            infinite
-          >
-            <q-carousel-slide name="first" img-src="/caraousel/1.jpg" />
-            <q-carousel-slide name="second" img-src="/caraousel/2.jpg" />
-            <q-carousel-slide name="third" img-src="/caraousel/3.jpg" />
-            <q-carousel-slide name="fourth" img-src="/caraousel/4.jpg" />
-            <q-carousel-slide name="fifth" img-src="/caraousel/5.jpg" />
-          </q-carousel>
-          <div class="carousel-caption-attach">
-            <div class="caption-head caption-head-blue">
-              {{
-                slide === 'first' ? 'Extend mo converge mo!' :
-                slide === 'second' ? 'Tap Here to Participate' :
-                slide === 'third' ? 'Padala? SendWave na yan!' :
-                slide === 'fourth' ? 'Walang abala sa pagpadala!' :
-                slide === 'fifth' ? 'Extra kita?' :
-                slide === 'sixth' ? 'Sixth stop' : ''
-              }}
-            </div>
-            <div class="caption-sub caption-sub-grey">
-              {{
-                slide === 'first' ? 'Load na ulit and get Sweldo Assistance' :
-                slide === 'second' ? 'Get a chance to meet your fave idol' :
-                slide === 'third' ? 'Send money home in seconds via SendWave' :
-                slide === 'fourth' ? 'Safe and fast padala? Ria na \'yan!' :
-                slide === 'fifth' ? 'Posible yan sa Gcrypto!' :
-                slide === 'sixth' ? 'Avatar' : ''
-              }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <PromoCarousel
+        v-model="slide"
+        :slides="carouselSlides"
+        :captions="carouselCaptions"
+      />
+    </SectionWithViewAll>
 
-    <div class="quick-actions-group q-mb-md no-horizontal-padding full-width-bg">
-      <div class="check-this-out-label-container">
-        <div class="row items-center explore-app-row">
-          <span class="explore-app-label">Check This Out</span>
-        </div>
-      </div>
+    <SectionWithViewAll label="Check This Out" @view-all="onViewAllCheck">
       <div class="row items-center check-this-out-img-row">
-        <img src="gforest.jpg" class="check-this-out-img" />
+        <img src="/gforest.jpg" class="check-this-out-img" />
       </div>
       <div class="check-this-out-text-container">
         <p class="q-mb-none check-this-out-text">Join the movement <br /> with GForest!</p>
       </div>
-    </div>
+    </SectionWithViewAll>
 
-    <div class="quick-actions-group q-mb-md no-horizontal-padding full-width-bg check-this-out-spacer-2" style="padding-bottom: 80px;">
-      <div class="check-this-out-label-container">
-        <div class="row items-center explore-app-row">
-          <span class="explore-app-label">Just For You</span>
-        </div>
-      </div>
+    <SectionWithViewAll label="Just For You" @view-all="onViewAllJust">
       <div
         class="row items-center check-this-out-img-row no-scrollbar"
         style="flex-wrap:nowrap; overflow-x:auto;"
       >
-        <img src="/slides/slide1.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
-        <img src="/slides/slide2.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
-        <img src="/slides/slide3.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
-        <img src="/slides/slide4.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
-        <img src="/slides/slide5.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
-        <img src="/slides/slide6.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
-        <img src="/slides/slide7.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
-        <img src="/slides/slide8.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
-        <img src="/slides/slide9.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
-        <img src="/slides/slide10.jpg" class="check-this-out-img" style="flex:0 0 auto;" />
+        <img v-for="n in 10" :key="n" :src="`/slides/slide${n}.jpg`" class="check-this-out-img" style="flex:0 0 auto;" />
       </div>
       <div class="check-this-out-text-container">
         <p class="q-mb-none check-this-out-text"></p>
       </div>
-    </div>
+    </SectionWithViewAll>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import WalletHeader from 'components/shared/WalletHeader.vue'
+import QuickActions from 'components/shared/QuickActions.vue'
+import BannerImage from 'components/shared/BannerImage.vue'
+import PromoCarousel from 'components/shared/PromoCarousel.vue'
+import SectionWithViewAll from 'components/shared/SectionWithViewAll.vue'
 
 const slide = ref('first')
 const tab = ref('home')
-const showBalance = ref(true)
 
+const quickActions = [
+  { icon: 'app_shortcut', label: 'Load' },
+  { icon: 'account_balance', label: 'Transfer' },
+  { icon: 'payments', label: 'Bills' },
+  { icon: 'commute', label: 'Commute' }
+]
+
+const carouselSlides = [
+  { name: 'first', imgSrc: '/caraousel/1.jpg' },
+  { name: 'second', imgSrc: '/caraousel/2.jpg' },
+  { name: 'third', imgSrc: '/caraousel/3.jpg' },
+  { name: 'fourth', imgSrc: '/caraousel/4.jpg' },
+  { name: 'fifth', imgSrc: '/caraousel/5.jpg' }
+]
+
+const carouselCaptions = {
+  first: { head: 'Extend mo converge mo!', sub: 'Load na ulit and get Sweldo Assistance' },
+  second: { head: 'Tap Here to Participate', sub: 'Get a chance to meet your fave idol' },
+  third: { head: 'Padala? SendWave na yan!', sub: 'Send money home in seconds via SendWave' },
+  fourth: { head: 'Walang abala sa pagpadala!', sub: 'Safe and fast padala? Ria na \'yan!' },
+  fifth: { head: 'Extra kita?', sub: 'Posible yan sa Gcrypto!' },
+  sixth: { head: 'Sixth stop', sub: 'Avatar' }
+}
+
+function onLearnMore() {
+  // handle learn more click
+}
+function onQuickAction(label) {
+  // handle quick action click
+}
+function onViewAll() {
+  // handle view all click
+}
+function onViewAllCheck() {
+  // handle view all click for check this out
+}
+function onViewAllJust() {
+  // handle view all click for just for you
+}
 </script>
 
 <style scoped>
